@@ -38,7 +38,7 @@ En ambos nodos creamos una copia del archivo de configuracion de corosync.::
 
 	# cp -dp corosync.conf.example corosync.conf
 
-En ambos nodos especificamos la red en la que se va a escuchar el heartbeat de Pacemaker. /etc/corosync/corosync.conf:
+En ambos nodos especificamos la red en la que se va a escuchar el heartbeat de Pacemaker. /etc/corosync/corosync.conf.::
 
 	# vi corosync.conf
 	compatibility: whitetank
@@ -122,7 +122,7 @@ En ambos nodos iniciamos los servicios.::
 	# service corosync restart
 	# service pacemaker restart	
 
-No olvides los iptables.:
+No olvides los iptables.::
 
 	# service iptables stop
 
