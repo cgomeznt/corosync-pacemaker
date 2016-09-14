@@ -142,7 +142,7 @@ Stop a resource
 	crmsh # crm resource stop ClusterIP
 	pcs   # pcs resource disable ClusterIP
 
-Remove a resource
+Remove a resource::
 
 	crmsh # crm configure delete ClusterIP
 	pcs   # pcs resource delete ClusterIP
@@ -335,14 +335,14 @@ Batch changes
 Template creation
 ++++++++++++++++++
 
-Create a resource template based on a list of primitives of the same type
+Create a resource template based on a list of primitives of the same type.::
 
 	crmsh # crm configure assist template ClusterIP AdminIP
 
 Log analysis
 +++++++++++++
 
-Display information about recent cluster events
+Display information about recent cluster events.::
 
 	crmsh # crm history
 	crmsh # peinputs
