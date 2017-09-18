@@ -265,6 +265,7 @@ Clear fail counts
 
 	crmsh # crm resource cleanup Website
 	pcs   # pcs resource cleanup Website
+		  # pcs resource cleanup Website:1
 
 Edit fail counts
 ++++++++++++++++
@@ -294,8 +295,8 @@ Create a clone
 +++++++++++++++
 ::
 
-	crmsh # crm configure clone WebIP ClusterIP meta globally-unique=true clone-max=2 clone-node-max=2
-	pcs   # pcs resource clone ClusterIP globally-unique=true clone-max=2 clone-node-max=2
+	crmsh # crm configure clone WebIP ClusterIP meta globally-unique=true clone-max=2 clone-node-max=1
+	pcs   # pcs resource clone ClusterIP globally-unique=true clone-max=2 clone-node-max=1
 
 Create a master/slave clone
 ++++++++++++++++++++++++++++
@@ -307,6 +308,12 @@ Create a master/slave clone
 	pcs   # pcs resource master WebDataClone WebData \
 		    master-max=1 master-node-max=1 \
 		    clone-max=2 clone-node-max=1 notify=true
+
+Eliminar clone
++++++++++++++++++
+::
+
+	pcs	 # pcs resource unclone WebSite-clone
 
 Other operations
 +++++++++++++++++
