@@ -149,6 +149,7 @@ Nos aseguramos de que el servicio de apache este disable y en stop.::
 	sep 17 20:56:22 srv-vccs-haproxywaf01 systemd[1]: Stopped The Apache HTTP Server.
 	sep 17 21:17:01 srv-vccs-haproxywaf01 systemd[1]: Unit httpd.service cannot be reloaded because it is inactive.
 
+::
 
 	# pcs resource create WebSite ocf:heartbeat:apache configfile="/etc/httpd/conf/httpd.conf" statusurl="http://127.0.0.1/server-status" op monitor interval=15s
 
@@ -170,7 +171,7 @@ Now we can use the HAProxy OCF resource agent to define our haproxy cluster reso
 Add haproxy Resource
 With our HAProxy OCF resource agent installed, we can now configure an haproxy resource that will allow the cluster to manage HAProxy.
 
-On either load balancer server, create the haproxy primitive resource with this command:
+On either load balancer server, create the haproxy primitive resource with this command::
 
 	# pcs configure primitive haproxy ocf:heartbeat:haproxy op monitor interval=15s
 The specified resource tells the cluster to monitor HAProxy every 15 seconds, and to restart it if it becomes unavailable.
